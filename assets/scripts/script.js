@@ -1,4 +1,8 @@
 //Assignment code here
+let upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+let lower = 'abcdefghijklmnopqrstuvwxyz';
+let numbers = '0123456789';
+let symbols = '!@#$%^&*_-/+';
 function makeid(length, characters) {
   let result = '';
   let charactersLength = characters.length;
@@ -43,51 +47,51 @@ function passCrit () {
   let specialChar = window.confirm('Do you wish to include special characters?');
 
   if (upperCase && lowerCase && numericChar && specialChar) {
-    characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*_-/+';
+    characters = `${upper}${lower}${numbers}${symbols}`;
     return characters;
   } else if (upperCase && lowerCase && numericChar) {
-    characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    characters = `${upper}${lower}${numbers}`;
     return characters;
   } else if (upperCase && lowerCase && specialChar) {
-    characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*_-/+';
+    characters = `${upper}${lower}${symbols}`;
     return characters;
   } else if (upperCase && specialChar && numericChar) {
-    characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*_-/+';
+    characters = `${upper}${numbers}${symbols}`;
     return characters;
   } else if (lowerCase && numericChar && specialChar) {
-    characters = 'abcdefghijklmnopqrstuvwxyz!@#$%^&*_-/+';
+    characters = `${lower}${symbols}`;
     return characters;
 
   } else if (upperCase && lowerCase) {
-    characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    characters = `${upper}${lower}`;
     return characters;
   } else if (upperCase && specialChar) {
-    characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*_-/+';
+    characters = `${upper}${symbols}`;
     return characters;
   } else if (upperCase && numericChar) {
-    characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    characters = `${upper}${numbers}`;
     return characters;
 
   } else if (lowerCase && numericChar) {
-    characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    characters = `${lower}${numbers}`;
     return characters;
   } else if (lowerCase && specialChar) {
-    characters = 'abcdefghijklmnopqrstuvwxyz!@#$%^&*_-/+';
+    characters = `${lower}${symbols}`;
     return characters;
   } else if (numericChar && specialChar) {
-    characters = '0123456789!@#$%^&*_-/+';
+    characters = `${numbers}${symbols}`;
     return characters;
   } else if (upperCase) {
-    characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    characters = `${upper}`;
     return characters;
   } else if (lowerCase) {
-    characters = 'abcdefghijklmnopqrstuvwxyz';
+    characters = `${lower}`;
     return characters;
   } else if (numericChar) {
-    characters = '0123456789';
+    characters = `${numbers}`;
     return characters;
   } else if (specialChar) {
-    characters = '!@#$%^&*_-/+';
+    characters = `${symbols}`;
     return characters;
   } else {
     window.alert("You did not select a criteria!\nTry Again!")
